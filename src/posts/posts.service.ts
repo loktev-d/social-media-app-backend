@@ -14,6 +14,6 @@ export class PostsService {
   }
 
   async getAllPosts(): Promise<PostDocument[]> {
-    return await this.postModel.find().exec();
+    return await this.postModel.find().sort({ created: -1 }).exec();
   }
 }
